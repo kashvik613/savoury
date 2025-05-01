@@ -1,0 +1,21 @@
+{
+  "name": "recipe-app",
+  "version": "1.0.0",
+  "description": "A modern recipe application",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "serve",
+    "build": "echo 'No build step required'"
+  },
+  "keywords": [
+    "recipes",
+    "food",
+    "cooking"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.0.0"
+  }
+} 

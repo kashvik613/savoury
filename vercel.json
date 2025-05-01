@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "name": "recipe-app",
+  "builds": [
+    { "src": "vercel.build.sh", "use": "@vercel/static-build", "config": { "distDir": "public" } }
+  ],
+  "routes": [
+    { "src": "/style.css", "dest": "/style.css" },
+    { "src": "/script.js", "dest": "/script.js" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
+} 

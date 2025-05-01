@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <title>Recipe App</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <h1>Cook With KK</h1>
+            </div>
+            <form class="search-form">
+                <div class="search-container">
+                    <input type="text" placeholder="Search for recipes, locations, or ingredients" class="searchBox">
+                    <button type="submit" class="searchBtn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </form>
+            <div class="nav-buttons">
+                <button id="theme-toggle" class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="user-btn">
+                    <i class="fas fa-user"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Discover Culinary Delights</h1>
+            <p>Explore thousands of recipes from around the world</p>
+            <div class="hero-buttons">
+                <button class="cta-btn">Get Started</button>
+                <button class="secondary-btn">Learn More</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&h=600&fit=crop" 
+                 alt="Delicious Food"
+                 onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=600&fit=crop'">
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <h2>Popular Categories</h2>
+        <div class="categories-container">
+            <div class="category-card" data-category="italian">
+                <i class="fas fa-pizza-slice"></i>
+                <h3>Italian</h3>
+            </div>
+            <div class="category-card" data-category="asian">
+                <i class="fas fa-bowl-rice"></i>
+                <h3>Asian</h3>
+            </div>
+            <div class="category-card" data-category="american">
+                <i class="fas fa-hamburger"></i>
+                <h3>American</h3>
+            </div>
+            <div class="category-card" data-category="mexican">
+                <i class="fas fa-pepper-hot"></i>
+                <h3>Mexican</h3>
+            </div>
+            <div class="category-card" data-category="indian">
+                <i class="fas fa-bowl-food"></i>
+                <h3>Indian</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Recipes Section -->
+    <section class="featured-section">
+        <h2>Featured Recipes</h2>
+        <div class="featured-container">
+            <!-- Featured recipes will be inserted dynamically -->
+        </div>
+    </section>
+
+    <!-- Recipe Search Results -->
+    <section class="search-results-section">
+        <div class="recipe-container">
+            <h2>Search Results</h2>
+            <div class="filters">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Vegetarian</button>
+                <button class="filter-btn">Vegan</button>
+                <button class="filter-btn">Gluten-Free</button>
+            </div>
+        </div>
+
+        <!-- Recipe Details Popup -->
+        <div class="recipe-details">
+            <div class="recipe-details-content">
+                <button class="recipe-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="recipe-header">
+                    <img src="" alt="">
+                    <h2></h2>
+                    <div class="recipe-meta">
+                        <span><i class="fas fa-clock"></i> Prep: </span>
+                        <span><i class="fas fa-fire"></i> Cook: </span>
+                        <span><i class="fas fa-users"></i> Serves: </span>
+                        <span><i class="fas fa-signal"></i> </span>
+                    </div>
+                </div>
+                <div class="recipe-body">
+                    <div class="ingredients">
+                        <h3>Ingredients</h3>
+                        <ul></ul>
+                    </div>
+                    <div class="steps">
+                        <h3>Cooking Steps</h3>
+                        <ol></ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipe of the Week -->
+    <section class="recipe-of-week">
+        <div class="weekly-recipe-header">
+            <h2>🌟 Recipe of the Week</h2>
+            <p>Our most popular recipe this week</p>
+        </div>
+        <div id="weekly-recipe">
+            <div class="loading-animation">
+                <div class="spinner"></div>
+                <p>Loading...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-content">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Get weekly recipe updates and cooking tips</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <h2>What Our Users Say</h2>
+        <div class="testimonials-container">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <i class="fas fa-quote-left"></i>
+                    <p>This app has completely transformed my cooking experience. The recipes are amazing!</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="User">
+                    <div>
+                        <h4>Sarah Johnson</h4>
+                        <p>Food Enthusiast</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <i class="fas fa-quote-left"></i>
+                    <p>I've discovered so many new recipes that my family loves. Highly recommended!</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User">
+                    <div>
+                        <h4>Michael Chen</h4>
+                        <p>Home Chef</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Discover the joy of cooking with our extensive collection of recipes from around the world.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Recipes</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Recipe App. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>
